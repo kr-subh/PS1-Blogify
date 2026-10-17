@@ -1,22 +1,24 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Home from './Pages/Home'
-import Post from './Pages/Post'
-import Post_id from './Pages/Post_id'
 
-const App = () => {
+import { Routes, Route } from 'react-router-dom';
+import Home from './Pages/Home';
+import Posts from './Pages/Post';
+import PostDetails from './Pages/PostDetails';
+import NotFound from './Pages/NotFound';
+import Navbar from './Components/Navbar';
+
+function App() {
   return (
-    <div>
+    <>
+      <Navbar />
 
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/posts' element={<Post/>}/>
-        <Route path='/posts/:id' element={<Post_id/>}/>
-        <Route/>
+        <Route path="/" element={<Home />} />
+        <Route path="/posts" element={<Posts />} />
+        <Route path="/posts/:id" element={<PostDetails />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-      
-    </div>
-  )
+    </>
+  );
 }
 
-export default App
+export default App;

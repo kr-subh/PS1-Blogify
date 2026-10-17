@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Error = () => {
+const NotFound = () => {
   return (
     <div>
-        <h1>Error</h1>
+      
     </div>
   )
 }
 
-export default Error
+export default NotFound
