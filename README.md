@@ -1,16 +1,51 @@
-# React + Vite
+# Blogify 📚
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple blog reader application built with React, React Router, and the JSONPlaceholder API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Home Page**: Welcome screen with an introduction and quick navigation.
+- **Explore Posts**: Browse posts fetched dynamically from JSONPlaceholder.
+- **Search Functionality**: Real-time search filter to find posts by title.
+- **Post Details**: View full post content and comments using dynamic routing (`/posts/:id`).
+- **404 Not Found Page**: Friendly error page for invalid URLs.
+- **Clean UI**: Simple, responsive layout that works on desktop and mobile.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React (Vite)
+- React Router DOM
+- CSS3
+- JSONPlaceholder API
 
-## Expanding the ESLint configuration
+## Project Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Follow these steps to run the project locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/kr-subh/PS1-Blogify.git
+   cd PS1-Blogify
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## Routes Included
+
+- `/` - Home Page
+- `/post` - Post Listing Page with Search
+- `/posts/:id` - Dynamic Post Details Page with Comments
+- `*` - 404 Page Not Found
