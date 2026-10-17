@@ -25,32 +25,37 @@ function Post() {
   );
 
   if (loading) {
-    return <p>Loading posts...</p>;
+    return <p className="loading-text">Loading posts...</p>;
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return <p className="error-text">{error}</p>;
   }
 
   return (
-    <main>
-      <h1>Explore Posts</h1>
-      <p>Find a story that interests you.</p>
+    <main className="posts-container">
+      <div className="posts-header">
+        <h1>Explore Posts</h1>
+        <p>Find a story that interests you.</p>
 
-      <input
-        type="text"
-        placeholder="Search posts..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+        <input
+          type="text"
+          placeholder="Search posts by title..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="search-input"
+        />
+      </div>
 
-      {filteredPosts.length > 0 ? (
-        filteredPosts.map((post) => (
-          <PostCard key={post.id} post={post} />
-        ))
-      ) : (
-        <p>No posts found.</p>
-      )}
+      <div className="posts-grid">
+        {filteredPosts.length > 0 ? (
+          filteredPosts.map((post) => (
+            <PostCard key={post.id} post={post} />
+          ))
+        ) : (
+          <p className="no-posts">No posts found.</p>
+        )}
+      </div>
     </main>
   );
 }
